@@ -47,7 +47,7 @@ fun Greeting() {
         verticalArrangement = Arrangement.Center
     ) {
         var text by remember{ mutableStateOf("Type here...") }
-        TextField(
+        OutlinedTextField(
             value = text,
             onValueChange = { newText ->
                 text = newText
