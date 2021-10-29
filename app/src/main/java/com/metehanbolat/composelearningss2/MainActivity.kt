@@ -6,9 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.TextField
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -43,7 +44,25 @@ fun Greeting() {
             onValueChange = { newText ->
                 text = newText
             },
-            readOnly = true
+            label = {
+                Text(text = "Title")
+            },
+            leadingIcon = {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(
+                        imageVector = Icons.Filled.Email,
+                        contentDescription ="Email Icon"
+                    )
+                }
+            },
+            trailingIcon = {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(
+                        imageVector = Icons.Filled.Check,
+                        contentDescription ="Email Icon"
+                    )
+                }
+            }
         )
     }
     
