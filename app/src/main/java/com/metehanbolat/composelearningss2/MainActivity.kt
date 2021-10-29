@@ -8,6 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -56,7 +57,7 @@ fun Greeting() {
             },
             leadingIcon = {
                 IconButton(onClick = {
-                    Log.d("Deneme","Bastık")
+                    Log.d("example","clicked")
                 }) {
                     Icon(
                         imageVector = Icons.Filled.Email,
@@ -75,6 +76,14 @@ fun Greeting() {
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email,
                 imeAction = ImeAction.Done
+            ),
+            keyboardActions = KeyboardActions(
+                onSearch = {
+                    Log.d("onSearch", "clicked")
+                },
+                onDone = {
+                    Log.d("onDone", "clicked")
+                }
             )
         )
     }
